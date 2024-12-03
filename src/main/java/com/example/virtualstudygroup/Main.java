@@ -10,6 +10,7 @@ public class Main {
         System.out.println("What type of study you want to choose :");
         System.out.println("1.Groupstudy");
         System.out.println("2.Solostudy");
+        System.out.println("3.MockExam");
         int input = scan.nextInt();
         switch (input) {
             case 1 -> {
@@ -43,6 +44,18 @@ public class Main {
                 soloStudy.EndSession();
                 soloStudy.getDetails();
 
+            }
+
+            case 3 ->{
+                System.out.println("Enter your name");
+                String name= scan.next();
+                System.out.println("Enter your mock exam type");
+                System.out.println("Choose any --> F2F,Virtual,Online,In-person");
+                String mockExamType = scan.next();
+                MockExamPreparation mockExamPreparation = new MockExamPreparation(name,mockExamType);
+                mockExamPreparation.StartSession();
+                mockExamPreparation.EndSession();
+                mockExamPreparation.FixSchedule();
             }
         }
         scan.close();
